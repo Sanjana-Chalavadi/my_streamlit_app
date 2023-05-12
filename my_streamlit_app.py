@@ -1,6 +1,5 @@
 # Modified from Johannes Rieke's example code
 # Import required libraries
-import streamlit
 import streamlit as st
 import pandas as pd
 import snowflake.connector
