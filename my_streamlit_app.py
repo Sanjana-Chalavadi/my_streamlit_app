@@ -26,7 +26,7 @@ def create_session_object():
 # Create Snowpark DataFrames that loads data from CLOUD_DB
 def load_data(session):
     # FORM RESULTS TBLE
-    snow_df = session.table("CLOUD_DB.PUBLIC.CC_FORM_RESULTS")
+    snow_df = session.table("CC_FORM_RESULTS")
  
     # Convert Snowpark DataFrames to Pandas DataFrames for Streamlit
     pd_df = snow_df.to_pandas()
