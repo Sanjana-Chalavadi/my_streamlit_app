@@ -26,14 +26,11 @@ def create_session_object():
 # Create Snowpark DataFrames that loads data from CLOUD_DB
 def load_data(session):
     # FORM RESULTS TBLE
-    snow_df = session.table("PUBLIC.CC_FORM_RESULTS")
+    snow_df = session.table("CLOUD_DB.PUBLIC.CC_FORM_RESULTS")
  
     # Convert Snowpark DataFrames to Pandas DataFrames for Streamlit
     pd_df = snow_df.to_pandas()
 
-# Add header and a subheader
-st.header("FORM RESULTS")
-st.subheader("Powered by Snowpark for Python and Snowflake Data Marketplace | Made with Streamlit")
 
 if __name__ == "__main__":
     session = create_session_object()
