@@ -24,14 +24,16 @@ def create_session_object():
 
 #Load data in snowpark dataframes
 # Create Snowpark DataFrames that loads data from CLOUD_DB
-def load_data(session):
-    # FORM RESULTS TBLE
-    snow_df = session.table("CC_FORM_RESULTS")
- 
-    # Convert Snowpark DataFrames to Pandas DataFrames for Streamlit
-    pd_df = snow_df.to_pandas()
+def load_data(table_name):
+    # read in data table
+   snow_df = session.table(table_name)
+   #collect the results
+   snow_df = snow_df.collect()
+   # Convert Snowpark DataFrames to Pandas DataFrames for Streamlit
+   pd_df = snow_df.to_pandas()
 
+   return pd_df
 
-if __name__ == "__main__":
-    session = create_session_object()
-    load_data(session)
+#writing out the data
+for row in pd_df:
+   st.write(f"{row[0]} has a row :{row[1]}:")
