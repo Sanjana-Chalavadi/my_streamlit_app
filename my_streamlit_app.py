@@ -8,19 +8,7 @@ import pandas as pd
 
 st.title('Cloud Computing Form Table')
 
-# Create Session object
-def create_session_object():
-   connection_parameters = {
-      "account": "HLB87172",
-      "user": "sanjanachalavadi95",
-      "password": "Snowflake999*",
-      "role": "PC_RIVERY_ROLE",
-      "warehouse": "COMPUTE_WH",
-      "database": "CLOUD_DB",
-      "schema": "PUBLIC"
-   }
-   session = Session.builder.configs(connection_parameters).create()
-   return session
+
 
 #Load data in snowpark dataframes
 # Create Snowpark DataFrames that loads data from CLOUD_DB
