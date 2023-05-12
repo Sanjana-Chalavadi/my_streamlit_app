@@ -1,7 +1,7 @@
 # Modified from Johannes Rieke's example code
 # Import required libraries
 import streamlit
-#from snowflake.snowpark.session import Session
+from snowflake.snowpark.session import Session
 import streamlit as st
 import pandas as pd
 
