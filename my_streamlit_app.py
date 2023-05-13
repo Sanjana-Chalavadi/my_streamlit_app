@@ -5,7 +5,7 @@ import pandas as pd
 import snowflake.connector
 
 
-st.title('Cloud Computing Form Table')
+streamlit.title('Cloud Computing Form Table')
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
